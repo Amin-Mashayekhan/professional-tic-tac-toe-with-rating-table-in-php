@@ -1,2 +1,2 @@
-# professional-tic-tac-toe-with-rating-table
+# Professional tic tac toe with rating table
 Guided by Mr. Javad Adib
