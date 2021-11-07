@@ -140,7 +140,7 @@ function game_createTable()
 		// $history = game_playerHistory('draw');
 		// var_dump($history);
 		$lastWinner = ['X' => null, 'O' => null];
-		$cup = '<i class="fas fa-trophy"></i> <i class="fa fa-trophy" aria-hidden="true"> </i> ';
+		$cup = ' <i class="fas fa-trophy" aria-hidden="true"></i> ';
 		// if ($_SESSION['last_winner'] === 'O') {
 		// 	$lastWinner['O'] = $cup;
 		// } elseif ($_SESSION['last_winner'] === 'X') {
