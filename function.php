@@ -12,9 +12,9 @@ function game_setName()
 	// defined in: fanction geme()
 	$el = null;
 	$el .= "<form method='post' id='game' class='form'>";
-	$el .=  "<br />	<input  type = 'text' name= 'player1' value= '" . $_SESSION['playerNames']['O'] . " ' placeholder = 'player1' />";
-	$el .= "<input  type = 'text' name= 'player2' value= '" . $_SESSION['playerNames']['X'] . " ' placeholder = 'player2' />";
-	$el .= "<br /> <input class='button'  type = 'submit' name ='setName' value = 'save Name'/>";
+	$el .=  "<br />	<input class='form-control' type = 'text' name= 'player1' value= '" . $_SESSION['playerNames']['O'] . " ' placeholder = 'Player1' />";
+	$el .= "<input class='form-control' type = 'text' name= 'player2' value= '" . $_SESSION['playerNames']['X'] . " ' placeholder = 'Player2' />";
+	$el .= "<br /> <input class='button form-button'  type = 'submit' name ='setName' value = 'Save names'/>";
 	$el .= "<br />	<a href='" . CURRENT_URL . "'>Return</a>";
 	$el  .= "<form>";
 	if (isset($_POST['setName'])) {

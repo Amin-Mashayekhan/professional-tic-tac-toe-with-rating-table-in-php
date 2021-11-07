@@ -218,6 +218,21 @@ body{
 }
 
 
+.form-control{
+	margin: 0 5px;
+}
+
+
+.form-button{
+	margin: 10px 0 5px;
+}
+
+
+.button{
+	padding: 0px 2px;
+}
+
+
 footer{
 	padding: 5px;
 	text-align: center;
