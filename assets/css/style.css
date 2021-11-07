@@ -1,0 +1,230 @@
+body{
+	background-color: lightyellow;
+	/* background-color: #eee; */
+	box-sizing: border-box;
+}
+
+
+#game, .title{
+	width: 400px;
+	padding: 10px 50px;
+	text-align: center;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+.title{
+			font-size: 2em;
+			margin-bottom: 10px;
+			padding: 0;
+}
+
+
+.title .row > .span2, .title .row > .span1{
+			opacity: 0.35;
+}
+
+
+.title .row .active{
+			opacity: 1;
+}
+
+
+.row{
+	justify-content: center;
+	min-width: 600px;
+	max-width: 100%;
+	display: flex;
+	text-align: center;
+}
+
+
+.Table-row{
+	text-align: center;
+}
+
+
+.title .span5{
+		margin: 0 60px;
+		display: inline-block;
+		text-align: center;
+
+}
+
+
+.title .span1{
+	display: inline-block;
+	float: left;
+}
+
+
+.title .span2{
+	display: inline-block;
+	float: right;
+}
+
+
+.cell{
+	width: 100px;
+	height:100px;
+	background-color: transparent;
+	display: inline-block;
+	float: left;
+	border: 1px solid #ccc;
+	cursor: pointer;
+	font-size: 10em;
+	line-height: 99px;
+	transition: 0.2s;
+}
+
+
+.cell[name="cell1"]{
+	border-left: none;
+	border-top: none;
+}
+.cell[name="cell2"]{
+	border-top: none;
+}
+.cell[name="cell3"]{
+	border-right: none;
+	border-top: none;
+}
+.cell[name="cell4"]{
+	border-left: none;
+}
+.cell[name="cell6"]{
+	border-right: none;
+}
+.cell[name="cell7"]{
+	border-left: none;
+	border-bottom: none;
+}
+.cell[name="cell8"]{
+	border-bottom: none;
+}
+.cell[name="cell9"]{
+	border-right: none;
+	border-bottom: none;
+}
+
+
+.cell:hover{
+	background-color: #eee;
+	transition: 0.1s;
+}
+
+
+#game, .cO{
+	color: #E04646;
+}
+
+
+#game, .cX{
+	color: #4689E8;
+}
+
+
+.cell:disabled{
+  cursor: default;
+}
+
+
+#result{
+	position: absolute;
+	top: 150px;
+	right: 0;
+	left: 0;
+	line-height: 100px;
+	background-color: rgba(0	, 0, 0, 0.9);
+	color: #fff;
+	font-size: 5em;
+	text-align: center;
+	z-index: 2;
+}
+
+
+#result p{
+	font-size:2rem;
+}
+
+
+#resetBtn{
+	border: none;
+	border-radius: 50px;
+	background-color: lightgreen ;
+	font-size: 2.5em;
+	padding: 10px 30px;
+	margin: 15px;
+	cursor: pointer;
+	/* display: block; */
+}
+
+
+#resetBtn:hover{
+	/*border: none;*/
+	border-radius: 10px;
+	background-color: rgb(88, 223, 88) ;
+	font-size: 2.5em;
+	padding: 10px 30px;
+	margin: 15px;
+	cursor: pointer;
+	transition: 0.8s;
+	color: rgb(255, 255, 70);
+	/* display: block; */
+}
+
+
+#resultTable{
+	text-align: left;
+	padding: 5% 2%;
+	font-size: 1.6em;
+}
+
+
+#resultTable li:hover{
+	background-color: #eee;
+}
+
+
+#resultTable .ttitle{
+	background-color: #ccc;
+	font-size: 0.88em;
+	color: black;
+}
+
+
+#resultTable .ttitle span:hover{
+	background-color: #bbb;
+}
+
+
+#resultTable span{
+	width: 60px;
+	display: inline-block;
+	text-align: center;
+}
+
+
+#resultTable span.f_player, #resultTable span.f_avg_time_game, #resultTable span.f_avg_moves_to_win, #resultTable span.f_avg_time_move{
+	width: 135px;
+	overflow: auto ;
+	font-size: 0.95em;
+}
+
+
+.fa-trophy{
+	color: #dbb600;
+}
+
+
+footer{
+	padding: 5px;
+	text-align: center;
+	position: fixed;
+	left: 1%;
+	bottom: 1%;
+	background-color: lightgreen;
+	line-height: 17px;
+	font-size: 1.39em;;
+}
