@@ -23,7 +23,7 @@
    <footer >
      Designed by <a target="" href="https://github.com/MohammadAmin-Mashayekhan">Mohammad amin Mashayekhan</a>
      <br>
-     Guided by: <span target="_blank" href="#">Mr. Javad Adib</span>
+     Guided by: <span>Mr. Javad Adib</span>
      <br>
    </footer>
  </body>
