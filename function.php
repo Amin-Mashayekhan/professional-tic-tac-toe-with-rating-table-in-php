@@ -5,9 +5,9 @@ session_start();
 function game_setName()
 {
 	// $this_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	// //الان میشه://localhost:808/projects/tic-tac-toe/?action=setName
+	// //becomes://localhost:808/projects/tic-tac-toe/?action=setName
 	// $this_url = strtok($this_url, "?");
-	// // هم میشه //localhost:808/projects/tic-tac-toe/
+	// // it also becomes //localhost:808/projects/tic-tac-toe/
 	// define('CURRENT_URL', $this_url);
 	// defined in: fanction geme()
 	$el = null;
@@ -28,13 +28,12 @@ function game_setName()
 }
 
 
-
-//  تابع آرایه با تابع میتونه کار رسم جدول رو دکدفعه انجام بده.
+// To draw the structure of the game:
 function game_start($_lastGame = null)
 {
 	$_SESSION['status'] = 'awaiting';
 	$_SESSION['save'] = false;
-	// اگر وسط بازی مرورگر بسته شد
+	// If the browser is closed in the middle of the game:
 	if ($_lastGame && is_array($_lastGame)) {
 		$_SESSION['game'] = $_lastGame['game'];
 		$_SESSION['playerNames'] = $_lastGame['playerNames'];
@@ -66,10 +65,10 @@ function game_start($_lastGame = null)
 		} else {
 			$randPlayer = array_rand($_SESSION['playerNames'], 1);
 			$_SESSION['current'] = $randPlayer;
-			// خط پایین برای این هست که در مراحل بعد میخواستیم لست وینر رو پرش کنیم خطای نعریف نشده نده
+			// The following line is to avoid errors if we want to fill last_winner in the next steps:
 			$_SESSION['last_winner'] = null;
-			// خط پایین برای این هست که به خودمون نشون بده که این رندم داره کار میکنه.
-			var_dump($_SESSION['current']);
+			// The following line is to see that this section is working randomly:
+			// var_dump($_SESSION['current']);
 		}
 		$_SESSION['game_time_start'] = time();
 	}
@@ -185,7 +184,7 @@ function game_createTable()
 		if ($value || $_SESSION['status'] == 'win' || $_SESSION['status'] == 'draw') {
 			$element .= " disabled";
 		}
-		// این برای وقتی هست که توی بروزر راست کلیک و سورس رو میزنیم این قسمت رو به تمیز و هر ردیف رو به صورت جداگانه نشون بده
+		// This is for when we right-click in the browser and click on the source, this part should be displayed cleanly and each row should be placed separately.
 		$element .= ">\n";
 	}
 	$element .= game_restartBtn();
@@ -211,7 +210,7 @@ function game_checkwinner()
 	$g = $_SESSION['game'];
 	$winner = null;
 	if (
-		// اولین موردش برای این هست که وقتی همشون خالی بودن،حالت برنده ایجاد نشه
+		// The first item in each parenthesis is to avoid the winning status when they are all empty:
 		($g[1] && $g[1] == $g[2] &&	$g[2] == $g[3]) //row1
 		||  ($g[4] && $g[4] == $g[5] && $g[5] == $g[6]) //row2
 		||  ($g[7] && $g[7] == $g[8] && $g[8] == $g[9]) //row3
@@ -252,10 +251,10 @@ function game_save()
 		return false;
 	}
 	$_SESSION['game_time_end'] = time();
-	// وقتی صفحه رو رفرش میشه،		خودبخود به امتیاز ها اضافه نشه
+	// When the page is refreshed, it will not be added to the points automatically:
 	$_SESSION['save'] = 'true';
-	//برای این که وقتی یک دور بازی انجام شد، دوباره نپرسه میخوای ادامه ی قبلی ناتموم رو بازی کنی؟
-	game_saveCookie('game_save');
+	// So that when a round of play is completed, after the game is reopened, it is not asked if you want to continue the previous incomplete game?:
+		game_saveCookie('game_save');
 	// save game total result
 	game_save_result();
 	// save for each players
@@ -392,7 +391,7 @@ function game_winner()
 		$result =  "	<div id= 'result'>" . $_SESSION['playerNames'][$game_result] . " win!$el_changeName </div> ";
 		game_save();
 	}
-	// پایین میگه همه ی خونه ها رو بررسی کن اگه توشون نال هیچی ندیدی، اعلام تساوی کن
+	// The following code checks all cells. If there is not null, it declares a status of equality
 	elseif ($game_result === false) {
 		// draw
 		$_SESSION['last_winner'] = null;
@@ -405,7 +404,7 @@ function game_winner()
 
 
 
-// این پایین میگه روی هرکدوم که کلیک کردیم،		توی اون خونه رو با توجه به نوبت پر کن
+// This following code says that when we click on any empty cell, fill that cell according to the players' turn
 function game_turn()
 {
 	if ($_SESSION['status'] == 'win' || $_SESSION['status'] == 'draw') {
@@ -711,9 +710,9 @@ function game_computerMove()
 
 function game()
 {
-	// خط بعد با توجه به صفحه مثلا ممکنه باشه://localhost:808/projects/tic-tac-toe/?action=setName
+	// The next line according the current page for example can be:localhost:808/projects/tic-tac-toe/?action=setName
 	$this_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	// خط پایین هم میشه؟ //localhost:808/projects/tic-tac-toe/
+	// The following line becomes //localhost:808/projects/tic-tac-toe/
 	$this_url = strtok($this_url, "?");
 	define('CURRENT_URL', $this_url);
 	// var_dump($_SERVER[REQUEST_URI]);
