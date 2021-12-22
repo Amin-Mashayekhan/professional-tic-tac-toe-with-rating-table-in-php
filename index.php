@@ -21,7 +21,7 @@
    </div>
 
    <footer >
-     Designed by <a target="" href="https://github.com/MohammadAmin-Mashayekhan">Mohammad amin Mashayekhan</a>
+     Coded by <a target="" href="https://github.com/MohammadAmin-Mashayekhan">Mohammad amin Mashayekhan</a>
      <br>
      Guided by: <span>Mr. Javad Adib</span>
      <br>
