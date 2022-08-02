@@ -303,7 +303,7 @@ function game_save_result($_player = null, $_single = false)
 		elseif ($_single) {
 			$new_value['lose'] = $new_value['lose'] + 1;
 		}
-		// else for two players together and total
+		// else, for two players together and total
 		elseif ($_single === false) {
 			if (!isset($new_value['win_' . $game_has_winner])) {
 				$new_value['win_' . $game_has_winner] = 0;
@@ -443,7 +443,7 @@ function game_turn()
 
 function game_sortResult($_datatable, $_by = null, $_desc = null)
 {
-	// get input value from user in get
+	// get input value from user through Get
 	if ($_by === null) {
 		if (isset($_GET['by'])) {
 			$_by = $_GET['by'];
@@ -451,7 +451,7 @@ function game_sortResult($_datatable, $_by = null, $_desc = null)
 			$_by = 'point';
 		}
 	}
-	// get input value from user in get
+	// get input value from user through Get
 	if ($_desc === null) {
 		if (isset($_GET['asc'])) {
 			$_desc = false;
@@ -484,15 +484,15 @@ function game_updatePoint($_datatable, $_field, $_desc)
 	$counter =  0;
 	foreach ($datatable_filtered as $playerName => $value) {
 		if ($value && $counter = 0) {
-			// Improve ine level
+			// Improve level
 			// by decreasing number
 			$_datatable[$playerName]['point'] = $_datatable[$playerName]['point'] + 3;
 		} elseif ($value && $counter = 1) {
-			// Improve ine level
+			// Improve level
 			// by decreasing number
 			$_datatable[$playerName]['point'] = $_datatable[$playerName]['point'] + 2;
 		} elseif ($value && $counter = 2) {
-			// Improve ine level
+			// Improve level
 			// by decreasing number
 			$_datatable[$playerName]['point'] = $_datatable[$playerName]['point'] + 1;
 		}
